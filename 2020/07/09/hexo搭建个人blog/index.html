@@ -15,7 +15,7 @@
 <meta property="og:description" content="Hexo搭建个人blog安装git官网下载或淘宝镜像下载 下载好后双击安装，选择安装地址，下一步 安装node.js官网下载 下载好后双击安装，选择安装地址，下一步 打开cmd检查git与node.js是否安装 12git --versionnode --version  运行结果为版本号则安装成功 打开Git Bash安装hexo 安装git后右击桌面菜单会有Git Bash here与Git">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-09T03:35:08.766Z">
-<meta property="article:modified_time" content="2020-07-09T03:09:46.756Z">
+<meta property="article:modified_time" content="2020-07-09T04:26:50.348Z">
 <meta name="twitter:card" content="summary">
   
   
@@ -131,6 +131,21 @@
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>修改blog主名称在hexo根目录下的_config.yml文件下修改</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">''</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">''</span></span><br><span class="line"><span class="attr">keywords:</span></span><br><span class="line"><span class="attr">author:</span> <span class="comment">#名称</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">en</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">''</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="提交到码云或GitHub"><a href="#提交到码云或GitHub" class="headerlink" title="提交到码云或GitHub"></a>提交到码云或GitHub</h2><p>在GitHub或码云新建仓库，复制HTTP连接</p>
+<p>修改hexo根目录下_config.yml</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#修改前</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">''</span></span><br><span class="line"><span class="comment">#修改后</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/LoveJAVA-Web/LoveJAVA-Web.github.io.git</span> <span class="comment">#此处为复制的地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>在hexo目录下打开Git Bash</p>
+<p>输入命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">#这一步是使用hexo-deployer-git插件将代码推送到码云（现在只是安装）</span><br><span class="line">hexo d</span><br><span class="line">#提交到仓库</span><br></pre></td></tr></table></figure>
+
+<p>GitHub：输入完命令后会弹出对话框，输入GitHub账号密码。</p>
+<p>其他：</p>
+<p>Github可能会弹出open SSH对话框：只需要再次输入账号密码即可</p>
+<p>hexo p执行出错可能是git没有设置用户与邮箱</p>
+<p>git设置用户与邮箱</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;XXX&quot;</span><br><span class="line">git config --global user.email &quot;XXX@XX.com&quot;</span><br><span class="line">#配置与修改共用这一套命令</span><br><span class="line"></span><br><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br><span class="line">#查看用户与邮箱</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -144,19 +159,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/07/09/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          微服务架构
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/07/09/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/07/09/Java%E7%A8%8B%E5%BA%8F%E4%BC%98%E5%8C%96/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">汇编语言</div>
+      <div class="article-nav-title">Java程序优化</div>
     </a>
   
 </nav>
@@ -193,23 +199,11 @@
       <ul>
         
           <li>
-            <a href="/2020/07/09/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84/">微服务架构</a>
-          </li>
-        
-          <li>
             <a href="/2020/07/09/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BAblog/">hexo搭建个人blog</a>
           </li>
         
           <li>
-            <a href="/2020/07/09/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">汇编语言</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/09/SSM/">SSM</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/09/MySQL/">MySQL</a>
+            <a href="/2020/07/09/Java%E7%A8%8B%E5%BA%8F%E4%BC%98%E5%8C%96/">Java程序优化</a>
           </li>
         
       </ul>
